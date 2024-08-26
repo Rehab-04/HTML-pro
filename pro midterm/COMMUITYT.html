@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+ 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+ 
+    <style>
+        body {
+            background-image: url("screen2.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eaeaef;
+        }
+ 
+        .firstdiv {
+            background-color: white;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 30%;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+ 
+        .firstdiv h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+ 
+        input {
+            width: 80%;
+            border: none;
+            border-bottom: 1px solid #4169e1;
+            outline: none;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+ 
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+ 
+        button {
+            background: #b0e0e6;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+ 
+        .navbar {
+            background-color: navy;
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 14px 20px;
+            position: relative;
+        }
+ 
+        .navbar img {
+            height: 50px;
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+ 
+        .navbar-links {
+            display: flex;
+            gap: 16px;
+        }
+ 
+        .navbar a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+ 
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+ 
+        .container {
+            margin-top: 100px;
+            background-color: #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+ 
+        .validation-message {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+        }
+    </style>
+</head>
+ 
+<body>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+ 
+    <div class="navbar">
+        <img src="asu.png" alt="Logo">
+        <div class="navbar-links">
+            <a href="Home page.html">Home Page</a>
+            <a href="about us.html">About Us</a>
+            <a href="review.html">Reviews</a>
+            <a href="contact us.html">Contact-us</a>
+            <a href="COMMUITYT.html">Community service</a>
+            <a href="ChattingGPT.html">ChattingGPT</a>
+            <a href="res.html">360 order</a>
+            <a href="facultyPage.html">faculty Page</a>
+            <a href="GPA.html">GPA</a>
+        </div>
+    </div>
+ 
+    <form id="registrationForm">
+        <div class="container">
+            <h1 style="text-align: center;">Community Service Registration Request</h1>
+ 
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="studentID" required>
+                <label for="studentID" >Student ID</label>
+                <div class="validation-message" id="idValidation">Student ID is required.</div>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" placeholder="Write Competition name here" id="competitionName" required></textarea>
+                <label for="competitionName">Competition Name</label>
+                <div class="validation-message" id="competitionValidation">Competition name is required.</div>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" placeholder="Leave a comment here" id="comments" style="height: 100px" required></textarea>
+                <label for="comments">Comments</label>
+                <div class="validation-message" id="commentsValidation">Comments are required.</div>
+            </div>
+            <div class="form-floating">
+                <select class="form-select" id="faculty" required>
+                    <option value="" selected disabled>Select Faculty</option>
+                    <option value="IT">IT</option>
+                    <option value="Business">Business</option>
+                    <option value="Law">Law</option>
+                </select>
+                <div class="validation-message" id="facultyValidation">Please select your faculty.</div>
+            </div>
+ 
+            <button type="submit" class="btn btn-outline-primary">Calculate Service Hours</button>
+ 
+        </div>
+    </form>
+ 
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+ 
+            // Clear all validation messages
+            document.querySelectorAll('.validation-message').forEach(function(message) {
+                message.style.display = 'none';
+            });
+ 
+            let isValid = true;
+ 
+            // Validate Student ID
+            const studentID = document.getElementById('studentID');
+            if (studentID.value.trim() === '') {
+                isValid = false;
+                document.getElementById('idValidation').style.display = 'block';
+            }
+ 
+            // Validate Competition Name
+            const competitionName = document.getElementById('competitionName');
+            if (competitionName.value.trim() === '') {
+                isValid = false;
+                document.getElementById('competitionValidation').style.display = 'block';
+            }
+ 
+            // Validate Comments
+            const comments = document.getElementById('comments');
+            if (comments.value.trim() === '') {
+                isValid = false;
+                document.getElementById('commentsValidation').style.display = 'block';
+            }
+ 
+            // Validate Faculty Selection
+            const faculty = document.getElementById('faculty');
+            if (faculty.value === '') {
+                isValid = false;
+                document.getElementById('facultyValidation').style.display = 'block';
+            }
+ 
+            // If form is valid, submit the form (for demonstration, just log success)
+            if (isValid) {
+                alert('Form submitted successfully!');
+                // Here, you would normally submit the form data to your server.
+            }
+        });
+    </script>
+ 
+</body>
+ 
+</html>
+ 
+has context menu

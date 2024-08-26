@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>University Cafeteria Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f5e9; /* Light green background */
+        }
+
+        .header {
+            background-color: #8c9fbb; /* Dark blue */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .cafeterias {
+            display: flex;
+            gap: 20px; /* Space between boxes */
+        }
+
+        .cafeteria {
+            flex: 1 1 calc(33.333% - 20px); /* Three boxes in a row with space between */
+            border: 1px dotted #ccc;
+        border-radius: 20px;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        .cafeteria h2 {
+            margin-top: 0;
+            color: #1b5e20; /* Dark green */
+        }
+
+        .menu-item {
+            margin-bottom: 10px;
+            color: #004d40; /* Dark green for text */
+        }
+
+        .order-form {
+            margin-top: 20px;
+            padding: 10px;
+            border-top: 2px solid #335280; /* Dark blue border */
+            background-color: #f1f8e9; /* Light green background */
+        }
+
+        .order-form label {
+           display: block;
+            margin-bottom: 5px;
+            color: #1b5e20; /* Dark green */
+        }
+
+        .order-form input[type="text"], 
+        .order-form select, 
+        .order-form textarea, 
+        .order-form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .order-form button {
+            background-color: #73859f; /* Dark blue */
+            color: white;
+             border: none;
+        }
+
+        .order-form button:hover {
+            background-color: #1b5e20; /* Dark green on hover */
+        }
+
+        .Logo {
+            position: absolute; /* Position logo absolutely */
+            top: 10px; /* Distance from the top */
+            left: 10px; /* Distance from the left */
+            width: 100px; /* Adjust width as needed */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eaeaef;
+        }
+
+        .navbar {
+            background-color: navy;
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 14px 20px;
+            position: relative;
+        }
+
+        .navbar img {
+            height: 50px;
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .navbar a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="asu.png" alt="Logo">
+        <div class="navbar-links">
+            <a href="Home page.html">Home Page</a>
+            <a href="about us.html">About Us</a>
+            <a href="review.html">Reviews</a>
+            <a href="contact us.html">Contact-us</a>
+            <a href="COMMUITYT.html">Community service</a>
+            <a href="ChattingGPT.html">ChattingGPT</a>
+            <a href="res.html">360 order</a>
+            <a href="facultyPage.html">faculty Page</a>
+            <a href="GPA.html">GPA</a>
+        </div>
+    </div>
+    <div class="header">
+        <h1>University Cafeteria Menu</h1>
+    </div>
+<form>
+    <div class="container">
+        <div class="cafeterias">
+            <!-- Cafeteria 1 -->
+            <div class="cafeteria">
+                <h2>Asu Cafe</h2>
+                <div class="menu-item">
+                    <strong>Sandwich:</strong> $5.00
+                </div>
+                <div class="menu-item">
+                    <strong>Salad:</strong> $6.00
+                </div>
+                <div class="menu-item">
+                    <strong>Soup:</strong> $4.50
+                </div>
+                <div class="menu-item">
+                    <strong>Iced Latte:</strong> $2.00
+                </div>
+                <div class="menu-item">
+                    <strong>White Moka:</strong> $2.50
+                </div>
+            </div>
+
+            <!-- Cafeteria 2 -->
+            <div class="cafeteria">
+                <h2>Number One Cafe</h2>
+                <div class="menu-item">
+                    <strong>Pizza Slice:</strong> $3.00
+                </div>
+                <div class="menu-item">
+                    <strong>Pasta:</strong> $7.00
+                </div>
+                <div class="menu-item">
+                    <strong>Fruit Bowl:</strong> $4.00
+                </div>
+                <div class="menu-item">
+                    <strong>Potato:</strong> $2.75
+                </div>
+                <div class="menu-item">
+                    <strong>Burger Meal:</strong> $7.60
+                </div>
+            </div>
+
+            <!-- Cafeteria 3 -->
+            <div class="cafeteria">
+                <h2>Sandwichety</h2>
+                <div class="menu-item">
+                    <strong>Bakery:</strong> $3.00
+                </div>
+                <div class="menu-item">
+                    <strong>Alfredo Fettuccine:</strong> $7.00
+                </div>
+                <div class="menu-item">
+                    <strong>Shawarma:</strong> $4.00
+                </div>
+                <div class="menu-item">
+                    <strong>Hotdog Meal:</strong> $3.75
+                </div>
+                <div class="menu-item">
+                    <strong>Chicken Barbecue:</strong> $9.60
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Form -->
+        <div class="order-form">
+            <h3>Order Form</h3>
+                <label for="cafeteria">Select Cafeteria:</label>
+                <select id="cafeteria" name="cafeteria" required>
+                    <option value="Asu Cafe">Asu Cafe</option>
+                    <option value="Number One Cafe">Number One Cafe</option>
+                    <option value="Sandwichety">Sandwichety</option>
+                </select>
+
+                <label for="menu-item">Select Menu Item:</label>
+                <select id="menu-item" name="menu-item" required>
+                    <!-- Options for Asu Cafe -->
+                    <optgroup label="Asu Cafe">
+                        <option value="Sandwich">Sandwich - $5.00</option>
+                        <option value="Salad">Salad - $6.00</option>
+                        <option value="Soup">Soup - $4.50</option>
+                        <option value="Iced Latte">Iced Latte - $2.00</option>
+                        <option value="White Moka">White Moka - $2.50</option>
+                    </optgroup>
+                    <!-- Options for Number One Cafe -->
+                    <optgroup label="Number One Cafe">
+                        <option value="Pizza Slice">Pizza Slice - $3.00</option>
+                        <option value="Pasta">Pasta - $7.00</option>
+                        <option value="Fruit Bowl">Fruit Bowl - $4.00</option>
+                        <option value="Potato">Potato - $2.75</option>
+                        <option value="Burger Meal">Burger Meal - $7.60</option>
+                    </optgroup>
+                    <!-- Options for Sandwichety -->
+                    <optgroup label="Sandwichety">
+                        <option value="Bakery">Bakery - $3.00</option>
+                        <option value="Alfredo Fettuccine">Alfredo Fettuccine - $7.00</option>
+                        <option value="Shawarma">Shawarma - $4.00</option>
+                        <option value="Hotdog Meal">Hotdog Meal - $3.75</option>
+                        <option value="Chicken Barbecue">Chicken Barbecue - $9.60</option>
+                    </optgroup>
+                </select>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" max="10" min="2" required>
+
+                <label for="comments">Additional Comments:</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+
+                <a href="discount.html" >Go to Disscount Page</a>
+                
+                <button type="submit">Submit Order</button>
+            
+        </div>
+       </form>
+
+    </div>
+</body>
+</html>

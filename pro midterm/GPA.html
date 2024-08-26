@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA and Admission Fee Calculator</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            background-image: url('gpa.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #3c5d8a;
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 14px 20px;
+        }
+
+        .navbar img {
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        .navbar-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-align: center;
+            padding: 8px 12px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #2e4970;
+        }
+
+        /* Container Styles */
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin-top: 50px;
+            flex-wrap:wrap;
+            padding: 0 20px;
+        }
+
+        /* Form Styles */
+        form {
+            background-color: #ffffffcc;
+            border-radius: 10px;
+            padding: 20px;
+            width: 350px;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #4a6fa5;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+       /*H and Gpa and input*/
+        .input-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            align-items: center;
+            font-size: 15px;
+        }
+
+        .input-group label {
+            flex: 1 1 40%;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            flex: 1 1 55%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #4a6fa5;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        button {
+            background-color: #4a6fa5;
+            color: white;
+            padding: 10px 15px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .radio-group {
+            margin-bottom: 15px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #4a6fa5;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .success-message {
+            color: green;
+        }
+
+        .date-time {
+            text-align: right;
+            padding: 10px 20px;
+            background-color: #8a91c3;
+            color: #ffffff;
+            font-weight: bold;
+        }
+    </style>
+
+
+    <script>
+        var totalCredits = 0;/*Hours*/
+        function Cgpa() {
+            var weightedSum = 0;
+            totalCredits = 0;
+            var errorMessage = document.getElementById("gpaError").innerHTML = "";
+            for (var i = 1; i <= 5; i++) {
+                var gpaInput = document.getElementById('gpa' + i).value.trim();
+                var hoursInput = document.getElementById('hours' + i).value.trim();
+
+                if (gpaInput === "" || hoursInput === "") {/*Check for fields*/
+                    errorMessage.innerHTML = "Error: Please fill in all GPA and Hours fields.";
+                    return;
+                }
+
+                var gpa = parseFloat(gpaInput);
+                var hours = parseFloat(hoursInput);
+
+                if (gpa < 35 || gpa > 100) {/*Check for num between 35 and 100*/
+                    errorMessage.innerHTML = "Error: GPA must be between 35 and 100.";
+                    return;
+                }
+
+                if (hours <= 0 || hours > 3) {/*Check for Hours between 0 and 3*/
+                    errorMessage.innerHTML = "Error: Hours must be between 1 and 3.";
+                    return;
+                }
+
+                weightedSum += gpa * hours;
+                totalCredits += hours;/*total num of hours*/
+            }
+
+            var avg = weightedSum / totalCredits;
+            document.getElementById("gpaResult").innerHTML = "Your average GPA is: <span class='success-message'>" + avg.toFixed(2) + "</span>";
+        }
+        var admissionFee = 0;
+
+        function calculateFees() {
+            var feeResult = document.getElementById("feeResult"); // Corrected assignment
+            feeResult.innerHTML = ""; // Clear previous error or success message
+            var yearRadios = document.getElementsByName("year"); // Get element by NAME
+            var yearSelected = false;
+ 
+    for (var i = 0; i < yearRadios.length; i++) {
+        if (yearRadios[i].checked) {
+            yearSelected = true;
+            var selectedYear = yearRadios[i].value;
+ 
+            // Use if and else if statements to determine the admission fee
+            if (selectedYear == "2000") {
+                admissionFee = 200;
+            } else if (selectedYear == "2001") {
+                admissionFee = 250;
+            } else if (selectedYear == "2002") {
+                admissionFee = 300;
+            } else if (selectedYear == "2003") {
+                admissionFee = 350;
+            } else if (selectedYear == "2004") {
+                admissionFee = 400;
+            } else if (selectedYear == "2005") {
+                admissionFee = 450;
+            } else {
+                admissionFee = 0; // Default value if no match is found
+            }
+            break;
+        }
+    }
+ 
+    if (!yearSelected) {
+        feeResult.innerHTML = "Error: Please select a year.";
+        feeResult.className = "error-message";
+    } else {
+        feeResult.innerHTML = "Your admission fee is: <span class='success-message'>" + admissionFee + " JD</span>";
+        feeResult.className = "";
+    }
+}
+ 
+
+        function calculateTotal() {
+            var totalResult = document.getElementById("totalResult");
+            totalResult.innerHTML = "";
+
+            if (totalCredits == 0) {
+                totalResult.innerHTML = "Error: Please calculate your GPA first.";
+                totalResult.className = "error-message";
+                return;
+            }
+
+            if (admissionFee == 0) {
+                totalResult.innerHTML = "Error: Please calculate your admission fee first.";
+                totalResult.className = "error-message";
+                return;
+            }
+
+            var total = (totalCredits * 100) + admissionFee;
+            document.getElementById("t1").value = "Your total fee is: " + total + " JD";
+            totalResult.innerHTML = "Calculation successful!";
+            totalResult.className = "success-message";
+        }
+
+        window.onload = function () {
+            displayDateTime();
+            setInterval(displayDateTime, 1000); // Update the time every second
+        }
+
+        function displayDateTime() {
+            var now = new Date();
+            var date = now.toLocaleDateString();
+            var time = now.toLocaleTimeString();
+            document.getElementById('dateTime').innerHTML = date + ' ' + time;
+        }
+    </script>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <div class="date-time" id="dateTime"></div>
+    <div class="navbar">
+        <img src="asu.png" alt="Logo">
+        <div class="navbar-links">
+            <a href="Home page.html">Home Page</a>
+            <a href="about us.html">About Us</a>
+            <a href="review.html">Reviews</a>
+            <a href="contact us.html">Contact Us</a>
+            <a href="COMMUITYT.html">Community Service</a>
+            <a href="ChattingGPT.html">ChattingGPT</a>
+            <a href="res.html">360 Order</a>
+            <a href="facultyPage.html">Faculty Page</a>
+            <a href="GPA.html">GPA</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- GPA Calculation Form -->
+        <form>
+            <h2>Find Out Your GPA</h2>
+            <div class="input-group">
+                <label for="gpa1">GPA 1:</label>
+                <input type="number" id="gpa1" min="35" max="100" step="0.01">
+            </div>
+            <div class="input-group">
+                <label for="hours1">Hours 1:</label>
+                <input type="number" id="hours1" min="1" max="3" step="1">
+            </div>
+            <div class="input-group">
+                <label for="gpa2">GPA 2:</label>
+                <input type="number" id="gpa2" min="35" max="100" step="0.01">
+            </div>
+            <div class="input-group">
+                <label for="hours2">Hours 2:</label>
+                <input type="number" id="hours2" min="1" max="3" step="1">
+            </div>
+            <div class="input-group">
+                <label for="gpa3">GPA 3:</label>
+                <input type="number" id="gpa3" min="35" max="100" step="0.01">
+            </div>
+            <div class="input-group">
+                <label for="hours3">Hours 3:</label>
+                <input type="number" id="hours3" min="1" max="3" step="1">
+            </div>
+            <div class="input-group">
+                <label for="gpa4">GPA 4:</label>
+                <input type="number" id="gpa4" min="35" max="100" step="0.01">
+            </div>
+            <div class="input-group">
+                <label for="hours4">Hours 4:</label>
+                <input type="number" id="hours4" min="1" max="3" step="1">
+            </div>
+            <div class="input-group">
+                <label for="gpa5">GPA 5:</label>
+                <input type="number" id="gpa5" min="35" max="100" step="0.01">
+            </div>
+            <div class="input-group">
+                <label for="hours5">Hours 5:</label>
+                <input type="number" id="hours5" min="1" max="3" step="1">
+            </div>
+            <button type="button" onclick="Cgpa()" class="btn btn-outline-primary">Calculate GPA</button>
+            <p id="gpaResult"></p>
+            <div id="gpaError" class="error-message"></div>
+        </form>
+
+        <!-- Admission Fee Calculation Form -->
+        <form>
+            <h2>Choose Year to Find Out Your Fee</h2>
+            <div class="radio-group">
+                <label>
+                    <input class="form-check-input" type="radio" id="year2000" name="year" value="2000">
+                    Year 2000
+                </label>
+                <label>
+                    <input class="form-check-input" type="radio" id="year2001" name="year" value="2001">
+                    Year 2001
+                </label>
+                <label>
+                    <input class="form-check-input" type="radio" id="year2002" name="year" value="2002">
+                    Year 2002
+                </label>
+                <label>
+                    <input class="form-check-input" type="radio" id="year2003" name="year" value="2003">
+                    Year 2003
+                </label>
+                <label>
+                    <input class="form-check-input" type="radio" id="year2004" name="year" value="2004">
+                    Year 2004
+                </label>
+                <label>
+                    <input class="form-check-input" type="radio" id="year2005" name="year" value="2005">
+                    Year 2005
+                </label>
+            </div>
+            <button type="button" onclick="calculateFees()" class="btn btn-outline-primary">Calculate Fee</button>
+            <div id="feeResult"></div>
+        </form>
+
+        <!-- Total Fee Calculation Form -->
+        <form>
+            <h2>Calculate Total Fees</h2>
+            <button type="button" onclick="calculateTotal()" class="btn btn-outline-primary">Calculate Total</button>
+            <textarea id="t1" rows="3" readonly>The Total is:</textarea>
+            <div id="totalResult"></div>
+        </form>
+    </div>
+</body>
+
+</html>

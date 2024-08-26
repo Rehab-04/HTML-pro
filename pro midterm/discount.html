@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Discount Circles</title>
+    <style>
+        body {
+
+            
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           height: 90vh;
+            background-color: #c4cad8; /* Light blue background */
+            margin: 0;
+            font-size: x-large;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+
+        h1 {
+            color: #08135c; /* Dark teal */
+            margin-bottom: 44px;
+    
+            text-align: center;
+            top: 10px; /* Adjust this value to move the title closer to the top */
+            left: 50%;        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Equal width columns */
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px; /* Max width to ensure it doesn't stretch too wide */
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Space between circle and map */
+            position: relative;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px; /* Make the box a perfect circle */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-color: #fff;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+            transition: transform 0.3s; /* Smooth transform effect */
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .box:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        .box .hover-message {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-align: center;
+            width: calc(100% - 20px); /* Adjusted for padding */
+        }
+
+        .box:hover .hover-message {
+            opacity: 1; /* Show message on hover */
+        }
+
+        .text-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Space between name, location, and map */
+        }
+
+        .place-name {
+            font-weight: bold;
+            color: #063c28; /* Dark teal */
+            margin-bottom: 5px;
+        }
+
+        .map-link {
+            color: #063617f7; /* Dark teal */
+        }
+
+        .map-link:hover {
+            text-decoration: underline;
+        }
+
+        .Logo {
+            position: absolute; /* Position logo absolutely */
+            top: 1px; /* Distance from the top */
+            left: 11px; /* Distance from the left */
+            width: 300px; /* Adjust width as needed */
+            right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <img src="asu.png" alt="asu" class="Logo">
+
+    <h1><i><strong>A special discount for ASU Students</strong></i></h1>
+
+    <div class="container">
+        <div class="item">
+            <div class="box">
+                <img src="uncle.png" alt="Product 1">
+                <div class="hover-message">20% Discount</div>
+            </div>
+            <div class="text-content">
+                <div class="place-name">Uncle's Osaka</div>
+                <a href="https://www.google.com/maps/place/Jordan" target="_blank" class="map-link">View on Google Maps</a>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="box">
+                <img src="firefly.jpg" alt="Product 2">
+                <div class="hover-message">15% Discount</div>
+            </div>
+            <div class="text-content">
+                <div class="place-name">Firefly Restaurant</div>
+                <a href="https://www.google.com/maps/place/Jordan" target="_blank" class="map-link">View on Google Maps</a>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="box">
+                <img src="dount.jpg" alt="Product 3">
+                <div class="hover-message">30% Discount</div>
+            </div>
+            <div class="text-content">
+                <div class="place-name">Planet Donuts</div>
+                <a href="https://www.google.com/maps/place/Jordan" target="_blank" class="map-link">View on Google Maps</a>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="box">
+                <img src="glow derma.jpg" alt="Product 4">
+                <div class="hover-message">25% Discount</div>
+            </div>
+            <div class="text-content">
+                <div class="place-name">Beauty Glow Derma</div>
+                <a href="https://www.google.com/maps/place/Jordan" target="_blank" class="map-link">View on Google Maps</a>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="box">
+                <img src="blk.png" alt="Product 5">
+                <div class="hover-message">10% Discount</div>
+            </div>
+            <div class="text-content">
+                <div class="place-name">Blk Coffee</div>
+                <a href="https://www.google.com/maps/place/Jordan" target="_blank" class="map-link">View on Google Maps</a>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="box">
+                <img src="avit.png" alt="Product 6">
+                <div class="hover-message">5% Discount</div>
+            </div>
+            <div class="text-content">
+                <div class="place-name">Avit Store</div>
+                <a href="https://www.google.com/maps/place/Jordan" target="_blank" class="map-link">View on Google Maps</a>
+            
+            </div>
+        </div>
+    </div>
+    <a href="Home page.html">Home Page</a>
+    <a href="res.html">Go Back</a>
+
+
+</body>
+</html>

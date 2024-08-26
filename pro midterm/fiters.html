@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Fiters Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #343763;
+        }
+
+        .navbar {
+            background-color: rgb(93, 92, 92);
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 14px 20px;
+            position: relative;
+        }
+
+        .navbar img {
+            height: 50px;
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .navbar a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        header, footer {
+            background-color: #f8f9fa;
+            padding: 1em;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 1em;
+            justify-content: space-between;
+        }
+
+        .section, .contact {
+            margin: 1em;
+        }
+
+        .section {
+            color: white;
+            flex: 1;
+            min-width: 200px;
+            background-color: #9ab1c8;
+            padding: 1em;
+            border-radius: 5px;
+        }
+
+        .contact {
+            flex: 0 0 300px;
+            background-color: #9ab1c8;
+            padding: 1em;
+            border-radius: 5px;
+        }
+
+        a {
+            color: #486396;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: rgb(137, 137, 137);
+            padding: 1em;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-header {
+            background-color: #0f1437;
+            color: white;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 5px 5px 0 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background-color: #f8f9fa;
+            border-radius: 0 0 5px 5px;
+        }
+
+        th, td {
+            border: 1px solid #000000;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: #2a3052;
+            color: white;
+        }
+
+        td {
+            color: #000000;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr{
+            background-color: #ddd;
+        }
+
+        h6 {
+            font-family: 'Arial', serif;
+            font-size: 45px;
+            color: #fff;
+            text-align: center;
+            margin-top: 10px; /* Reduced top margin */
+            margin-bottom: 10px; /* Optional: Added bottom margin */
+        }
+
+        #majors {
+            background-color: #576271;
+            padding: 1.5em;
+            border-radius: 5px;
+            flex: 1 0 45%;
+        }
+
+        #majors h1 {
+            font-size: 2em;
+            color: #ffffff;
+        }
+
+        #majors ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #majors li {
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+            color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="asu.png" alt="Logo">
+        <div class="navbar-links">
+            <a href="Home page.html">Home Page</a>
+            <a href="about us.html">About Us</a>
+            <a href="review.html">Reviews</a>
+            <a href="contact us.html">Contact-us</a>
+            <a href="COMMUITYT.html">Community service</a>
+            <a href="ChattingGPT.html">ChattingGPT</a>
+            <a href="res.html">360 order</a>
+            <a href="facultyPage.html">faculty Page</a>
+            <a href="GPA.html">GPA</a>
+        </div>
+    </div>
+
+    <header>
+        <h1>Welcome Fiters!</h1>
+    </header>
+
+    <video width="100%" height="auto" autoplay controls>
+        <source src="video.mp4" type="video/mp4"  >
+    </video>
+
+    <div class="container">
+        <div class="section" id="majors">
+            <h1>Majors</h1>
+            <ul>
+                <li>Computer Science</li>
+                <li>Cyber Security</li>
+                <li>Software Engineering</li>
+                <li>Data Science and AI</li>
+            </ul>
+        </div>
+
+        <div class="contact" id="contact">
+            <h2>Contact IT Faculty</h2>
+            <p>📞 <a href="tel:+0796655311">0796655311</a></p>
+            <p>✉️ <a href="mailto:fiter@asu.edu.jo">fiter@asu.edu.jo</a></p>
+        </div>
+    </div>
+
+    <h6>GPA Student Discounts</h6>
+
+    <div class="container">
+        <div class="section">
+            <div class="section-header">Computer Science - 100 JD</div>
+            <table>
+                <tr>
+                    <th>Percentage</th>
+                    <th>Discount</th>
+                </tr>
+                <tr>
+                    <td>90%</</td>
+                    <td>50 JD</td>
+                </tr>
+                <tr>
+                    <td>80%</</td>
+                    <td>60 JD</td>
+                </tr>
+                <tr>
+                    <td>70%</</td>
+                    <td>70 JD</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-header">Cyber Security - 120 JD</div>
+            <table>
+                <tr>
+                    <th>Percentage</th>
+                    <th>Discount</th>
+                </tr>
+                <tr>
+                    <td>90%</</td>
+                    <td>70 JD</td>
+                </tr>
+                <tr>
+                    <td>80%</</td>
+                    <td>80 JD</td>
+                </tr>
+                <tr>
+                    <td>70%</</td>
+                    <td>90 JD</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-header">Software Engineering - 100 JD</div>
+            <table>
+                <tr>
+                    <th>Percentage</th>
+                    <th>Discount</th>
+                </tr>
+                <tr>
+                    <td>90%</</td>
+                    <td>50 JD</td>
+                </tr>
+                <tr>
+                    <td>80%</</td>
+                    <td>60 JD</td>
+                </tr>
+                <tr>
+                    <td>70%</</td>
+                    <td>70 JD</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-header">Data Science and AI - 100 JD</div>
+            <table>
+                <tr>
+                    <th>Percentage</th>
+                    <th>Discount</th>
+                </tr>
+                <tr>
+                    <td>90%</</td>
+                    <td>50 JD</td>
+                </tr>
+                <tr>
+                    <td>80%</</td>
+                    <td>60 JD</td>
+                </tr>
+                <tr>
+                    <td>70%</</td>
+                    <td>70 JD</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <div class="section" id="location-hours">
+            <h2>Location and Hours</h2>
+            <p>Location: <a href="https://www.google.com/maps/place/Applied+Science+Private+University/@32.0400076,35.897824,17z/data=!4m14!1m7!3m6!1s0x151c9e3a42faf1ef:0x7cba90fd7b6d2247!2sApplied+Science+Private+University!8m2!3d32.0400076!4d35.9003989!16s%2Fm%2F03d0k05!3m5!1s0x151c9e3a42faf1ef:0x7cba90fd7b6d2247!8m2!3d32.0400076!4d35.9003989!16s%2Fm%2F03d0k05?entry=ttu" target="_blank">View on Google Maps</a></p>
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Hours</th>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>8 AM - 4 PM</td>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>8 AM - 4 PM</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>8 AM - 4 PM</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>8 AM - 4 PM</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>8 AM - 4 PM</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>Closed</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>Closed</td>
+                </tr>
+
+            </div>
+        </footer>
+        
+        </body>
+        </html>
+

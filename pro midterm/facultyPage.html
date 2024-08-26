@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Faculty Information</title>
+    <style>
+        body {
+           font-family: Arial, sans-serif;
+           margin: 0;
+           padding: 0;
+           background-color: #eaeaef;
+         }
+   
+         .navbar {
+           background-color: rgb(93, 92, 92);
+           overflow: hidden;
+           display: flex;
+           justify-content: flex-start; /* Align items to the left */
+           align-items: center; /* Align items vertically */
+           padding: 14px 20px; /* Adjust padding as needed */
+           position: relative; /* To position logo absolutely */
+         }
+   
+         .navbar img {
+           height: 50px; /* Adjust the height of the logo as needed */
+           background-color: #fff; /* White background behind the logo */
+           padding: 5px; /* Optional: add some padding around the logo */
+           border-radius: 5px; /* Optional: add rounded corners */
+           margin-right: 20px; /* Add space between logo and menu */
+         }
+   
+         .navbar-links {
+           display: flex;
+           gap: 16px; /* Space between links */
+         }
+   
+         .navbar a {
+           color: #f2f2f2;
+           text-align: center;
+           padding: 14px 16px;
+           text-decoration: none;
+         }
+   
+         .navbar a:hover {
+           background-color: #e5e5f9;
+           color: black;
+         }
+        .content {
+            padding: 20px;
+        }
+        h2 {
+            font-family: 'Arial', serif; /* Change font family here */
+            font-size: 45px; /* Adjust font size as needed */
+            color: #435486; /* Adjust font color as needed */
+        }
+        .faculty {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #f3e9e9;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .faculty img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .faculty-name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .faculty-name a {
+            color: #333;
+            text-decoration: none;
+        }
+        .faculty-name a:hover {
+            text-decoration: underline;
+        }
+        .faculty-details p {
+            margin: 0;
+            font-weight: normal; /* Ensure the building name is not bold */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <img src="asu.png" alt="Logo">
+        <div class="navbar-links">
+            <a href="Home page.html">Home Page</a>
+            <a href="about us.html">About Us</a>
+            <a href="review.html">Reviews</a>
+            <a href="contact us.html">Contact-us</a>
+            <a href="COMMUITYT.html">Community service</a>
+            <a href="ChattingGPT.html">ChattingGPT</a>
+            <a href="res.html">360 order</a>
+            <a href="facultyPage.html">faculty Page</a>
+            <a href="GPA.html">GPA</a>
+        </div>
+    </div>
+
+<div class="content">
+    <h2>Find out all about your faculty here!</h2>
+
+    <!-- Faculty of Information and Technology -->
+    <div class="faculty">
+        <img src="IT.jpg" alt="Faculty of Information and Technology">
+        <div class="faculty-details">
+            <div class="faculty-name">
+                <a href="fiters.html">Faculty of Information and Technology</a>
+            </div>
+            <p>Al Haj Abdallah Abu Khadijah Building</p>
+        </div>
+    </div>
+
+    <!-- Faculty of Dentistry -->
+    <div class="faculty">
+        <img src="dent.jpg" alt="Faculty of Dentistry">
+        <div class="faculty-details">
+            <div class="faculty-name">
+                <a href="faculty2.html">Faculty of Dentistry</a>
+            </div>
+            <p>Abu Khadijah Building</p>
+        </div>
+    </div>
+
+    <!-- Faculty of Law -->
+    <div class="faculty">
+        <img src="law.jpg" alt="Faculty of Law">
+        <div class="faculty-details">
+            <div class="faculty-name">
+                <a href="faculty3.html">Faculty of Law</a>
+            </div>
+            <p>Ibn al Bitar Building</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
